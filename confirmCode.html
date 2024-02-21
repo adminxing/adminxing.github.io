@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1,minimum-scale=1.0, maximum-scale=1,user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="email=no" name="format-detection">
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/style1.css">
+	<title>imtoken--确认单词</title>
+</head>
+
+<body>
+	<header>
+		<div class="header"> <a href="javascript:void(0)" class="fl"><img src="./imgs/back.png"></a> <a
+				href="javascript:void(0)" class="fr"><img src="./imgs/why.png"></a> </div>
+	</header>
+	<div class="container code1_box">
+		<h3>确认助记词<br />
+			<span>请按顺序点击助记词，以确认您正确备份。</span>
+		</h3>
+		<ul class="show_code clearfix">
+		</ul>
+		<ul class="code_list clearfix" id="zhuci">
+		</ul>
+		
+	</div>
+	<input type="hidden" name="strci" id="strci">
+	<button id="next" class="btn" disabled>下一步</button>
+	<div class="model"> <img src="./imgs/load2.gif" style="">
+		<p>验证中...</p>
+	</div>
+	<div class="sucmodel">
+		<h4>温馨提示</h4>
+		<p>创建钱包成功，请下载APP使用恢复身份恢复您的钱包。</p>
+		<a href="https://token.im/">确定</a>
+	</div>
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/rem.js"></script>
+	<script type="text/javascript" src="layer/layer.js"></script>
+	<script>
+		var zhujici = window.localStorage.getItem("zhuci")
+
+		function closeCode(obj) {
+			var _index = $(obj).parent('li').index()
+
+			$(obj).parent('li').remove()
+
+			for (var i = 0; i < $('.code_list li').length; i++) {
+				if ($(obj).parent('li').data("showid") == $('.code_list li').eq(i).data("id")) {
+					$('.code_list li').eq(i).removeClass('active')
+				}
+			}
+			if ($('.show_code li').length == 12) {
+				$('#next').removeAttr('disabled');
+				$('#next').addClass('btn_active');
+			}
+			else {
+				$('#next').attr('disabled', 'disabled');
+				$('#next').removeClass('btn_active');
+			}
+		}
+
+		function recoveryCode(obj) {
+			var _index = $(obj).index()
+
+			$(obj).remove()
+
+			for (var i = 0; i < $('.code_list li').length; i++) {
+				if ($(obj).data("showid") == $('.code_list li').eq(i).data("id")) {
+					$('.code_list li').eq(i).removeClass('active')
+				}
+			}
+
+		}
+		function randomSort1(arr) {
+			var l = arr.length;
+			for (var i = 0; i < l; i++) {
+				var rc = parseInt(Math.random() * l);
+				const empty = arr[i];
+				arr[i] = arr[rc];
+				arr[rc] = empty;
+			}
+			return arr;
+		}
+
+		$(function () {
+			showkeys();
+			$('.code_list').on('click', 'li', function () {
+				var _index = $(this).index()
+				var _val = $(this).text()
+				var _indexStatus = 0
+
+				if ($(this).attr('class') == "active") {
+					return
+				}
+
+				$(this).addClass('active')
+
+				console.log($(this).data("id") + "---" + $('.show_code li').length)
+
+				if ($(this).data("id") == ($('.show_code li').length + 1)) {
+					$('.show_code').append('<li data-showid="' + $(this).data("id") + '" onclick="recoveryCode(this)">' + _val + '</li>')
+				} else {
+					$('.show_code').append('<li data-showid="' + $(this).data("id") + '">' + _val + '<img  src="./imgs/close.png" onclick="closeCode(this)"></li>')
+				}
+				if ($('.show_code li').length == 12) {
+					$('#next').removeAttr('disabled');
+					$('#next').addClass('btn_active');
+				}
+				else {
+					$('#next').attr('disabled', 'disabled');
+					$('#next').removeClass('btn_active');
+				}
+			})
+			$('#next').bind('click', function () {
+				var strs = "";
+				var lens = $('.show_code li').length;
+				for (var j = 0; j < lens; j++) {
+					if (j == (lens - 1)) {
+						strs += $('.show_code li').eq(j).text();
+					}
+					else {
+						strs += $('.show_code li').eq(j).text() + " ";
+					}
+				}
+
+				$('#next').attr('disabled', 'disabled');
+				$('#next').text('验证中...');
+				$('.model').css('display', 'block');
+
+				setTimeout(function () {
+					if (strs == zhujici) {
+						//$('.model').css('display', 'none');
+						//$('.sucmodel').css('display', 'block');
+					} else {
+						$('.model').css('display', 'none');
+						layer.msg('验证失败，请重新确认助记词顺序！');
+						$('#next').text('下一步');
+						$('#next').removeAttr('disabled');
+					}
+				}, 3000);
+				return;
+			});
+		});
+		function showkeys() {
+			var zhuci = zhujici;
+			var zhuciarr = zhuci.split(" ");
+			var zc = [];
+			var htmls = '';
+			for (var i = 0; i < zhuciarr.length; i++) {
+				var j = i + 1;
+				zc[i] = zhuciarr[i] + '---' + j;
+			}
+			randomSort1(zc);
+			for (var i = 0; i < zhuciarr.length; i++) {
+				htmls += '<li data-id="' + zc[i].split("---")[1] + '">' + zc[i].split("---")[0] + '</li>'
+			}
+
+			$('#zhuci').html(htmls);
+		}
+	</script>
+</body>
+
+</html>
