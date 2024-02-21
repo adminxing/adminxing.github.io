@@ -1,0 +1,227 @@
+/* CSS Document */
+html, body, div, h1, h2, h3, h4, h5, h6, ul, dl, li, dt, dd, p, form, table, th, td,input,select,option {margin:0;padding:0;}
+body{ margin:0; padding:0; font-size:12px; font-family:'宋体'; }
+a{ text-decoration:none;outline:none;}
+a:hover{ text-decoration:underline;}
+img{ border:0px;}
+.clear{ clear:both;}
+/*margin and padding*/
+.mar{ margin-left:5px; margin-right:5px;}
+.mar00{ margin-left:8px;}
+.mar01{margin-top:10px;}
+.mar02{margin-right:10px;}
+.mar03{margin-left:10px;}
+.mar04{margin-bottom:10px;}
+.mar05{margin-top:15px;}
+.mar06{margin-left:30px; margin-top:2px; margin-bottom:2px;}
+.mar07{margin-top:20px;}
+.mar08{ margin-left:40px;}
+.mar09{margin-right:20px;}
+.mar10{ margin-left:15px;}
+.mar11{ margin-left:3px;}
+.mar12{ margin-top:28px;}
+.mar13{ margin-top:5px;}
+.mar14{ margin-bottom:5px;}
+.mar15{ margin-left:25px; margin-right:25px;}
+.mar16{ margin:0 16px;}
+.mar17{ margin-right:30px;}
+.pad01{padding-top:10px;}
+.pad02{padding-right:10px;}
+.pad03{padding-left:10px;}
+.pad04{padding-bottom:10px;}
+.pad05{padding-top:2px;}
+.pad06{ padding-left:30px;}
+.pad07{padding-right:18px;}
+.pad08{0 5px;}
+.pad09{padding-left:17px;padding-right:20px;}
+.pad10{ padding-top:5px;}
+/*公共文字*/
+.txt_red{color:red;};
+.txt_line{ text-decoration:underline;}
+.txt_h{ line-height:20px;}
+.txt_h2{ line-height:24px;}
+.txt_h3{ line-height:18px;}
+.txt_b{ font-weight:bolder}
+.txt_yellow{color:#cc9933;}
+.txt_yellow a{color:#cc9933;}
+.txt_yellow a:hover{color:#cc9933; text-decoration:underline;}
+.txt_zt{ font-family:Arial, Helvetica, sans-serif;}
+.txt_hui{ color:#444;}
+.txt_hui2{color:#999;}
+.txt_x{ text-decoration: line-through; color:#999999; font-weight:bolder; font-family:Arial, Helvetica, sans-serif; font-size:16px;}
+.size01{font-size:14px;}
+.size02{font-size:13px;}
+.size03{font-size:16px;}
+.txt_back{font-size: 24px;font-weight: bold;}
+
+
+/*线条*/
+.line01{ border-bottom:1px solid #B7B7B7;}
+.line02{ border-bottom:1px solid #eee;}
+.line03{ border-bottom:1px solid #ddd;}
+.line04{ border-top:1px solid #ddd;}
+.w_back{ background:url(../images/w_03.jpg) repeat-y;}
+.w_back01{ background:url(../images/w_back.jpg) repeat-x bottom; margin:0 8px; padding:0 15px;}
+.xuxian{ background:url(../images/mc_xuxian.gif) repeat-x center; width:100%; height:10px;}
+.sty_26_line{border-bottom:1px dashed #999;margin-bottom:5px;height:3px;width:100%; overflow:hidden;}
+.sty_25_line{border-bottom:1px dashed #999;margin-bottom:15px;height:17px;width:100%; overflow:hidden;}
+.sty_24_line{border-bottom:1px dashed #999;	margin-bottom:5px;height:1px;width:100%; overflow:hidden;}
+.sty_23_line{border-bottom:1px solid #ccc;margin-bottom:5px;height:5px;width:100%; overflow:hidden;}
+.dian{ text-align:left; border-bottom:1px dotted #ccc;}
+.xyy{ line-height:20px; margin-top:2px; text-align:right; color:#666;}
+/*手柄*/
+.shouzhi{ cursor:pointer;}
+/*漂浮*/
+.f_left{ float:left;}
+.f_right{ float:right;}	
+/*收缩按钮*/
+.bar{ position:absolute; margin-left:1px;margin-top:150px; background:url(../images/023.gif) no-repeat; width:18px; height:18px; cursor:pointer; }
+.bar2{ position:absolute; margin-left:1px;margin-top:150px; background:url(../images/022.gif) no-repeat; width:18px; height:18px; cursor:pointer;}
+/*侧栏box*/
+.right01{ background:url(../images/right01.gif) no-repeat; width:14px; height:11px;}
+.right02{ background:url(../images/right02.gif) no-repeat; width:7px; height:11px;}
+.right03{ background:url(../images/right03.gif) repeat-x; height:11px;}
+.right04{ background:url(../images/right04.gif) repeat-y; width:14px;}
+.right05{ background:url(../images/right05.gif) repeat-y; width:7px;}
+.right06{ background:url(../images/right06.gif) no-repeat; width:14px; height:13px;}
+.right07{ background:url(../images/right07.gif) repeat-x; width:7px; height:13px;}
+.right08{ background:url(../images/right08.gif) no-repeat; width:7px; height:13px;}
+/*交易提示*/
+.jyts{ background:url(../images/ts_back.jpg) repeat-x bottom;  padding:6px 0px; line-height:22px;}
+.jyts span{ line-height:22px;}
+/*交易成功*/
+.jycg{ background:url(../images/008.gif) repeat-y;}
+.jycg2{ background:url(../images/010.gif) repeat-y;}
+.ycback01{ background:url(../images/081.gif) no-repeat top; width:664px; height:31px;}
+.ycback02{ background:url(../images/081-1.gif) no-repeat top; width:664px; height:31px;}
+.yckey{ margin-left:230px; width:170px; text-align:center; height:31px; cursor:pointer;}
+/*脚部*/
+.foot{width:964px;background:url(../images/foot.gif) top left no-repeat;line-height:31px; height:31px;text-align:center;color:#999; margin-top:5px;}
+/*文本框*/
+.input_on{font-family:Arial, Helvetica, sans-serif;border:1px solid #a700ad;height:18px;line-height:18px;padding:0 3px 0 2px;}
+.input_out,.input_off{font-family:Arial, Helvetica, sans-serif;border:1px solid #7f9db9;height:18px;line-height:18px;padding:0 3px 0 2px;}
+.input_on2{font-family:Arial, Helvetica, sans-serif;border:1px solid #a700ad;height:18px;line-height:18px;width:182px;padding:0 3px 0 2px;}
+.input_out2,.input_off2{font-family:Arial, Helvetica, sans-serif;border:1px solid #7f9db9;height:18px;line-height:18px;width:182px;padding:0 3px 0 2px;}
+.center_right_2 {height:30px;margin:10px 0 0 45px;}
+
+/*边框*/
+.border{border:1px solid #ccc;}
+.boder_left{ background:url(../images/008.jpg) repeat-y;}
+.boder_right{ background:url(../images/013.jpg) repeat-y;}
+.border1{ background:url(../images/bs2.gif) repeat-y;}
+.border2{ background:url(../images/bs5.gif) repeat-y;}
+.border_down{ background:url(../images/bs8.gif) repeat-x top;}
+.border3{ border-left:1px solid #ddd; overflow:hidden;}
+.border4{ border-right:1px solid #ddd;}
+.border5{border-top:1px solid #ddd;overflow:hidden; height:5px;}
+.border6{border-bottom:1px solid #ddd; overflow:hidden;height:5px;}
+.border7{ background:url(../images/jg2.jpg) repeat-x; height:11px;}
+.border8{ background:url(../images/jg5.jpg) repeat-x; height:13px;}
+.border9{ background:url(../images/jg8.jpg) repeat-y;}
+.border10{ background:url(../images/jg7.jpg) repeat-y}
+.ts_boder_left{ background:url(../images/ts_04.jpg) repeat-y bottom;}
+.ts_boder_right{ background:url(../images/ts_05.jpg) repeat-y bottom;}
+.d_back{ background:url(../images/bs9.gif) no-repeat; width:179px; height:33px; cursor:pointer;}
+.d_backk{ background:url(../images/bs10.gif) no-repeat; width:179px; height:33px; cursor:pointer;}
+.keytxt{ width:155px; margin-top:8px; text-align:center; float:left;}
+/*右侧栏公共样式*/
+.right1{ width:256px; margin-bottom:5px;}
+.right1 .back{ background:url(../images/right09.gif) no-repeat; width:240px; height:36px; padding-left:16px;}
+.right1 .back2{ background:url(../images/right10.gif) repeat-y;width:256px; padding-left:2px;}
+.back3{ background:url(../images/right_back.gif) bottom repeat-x;width:246px; float:left; overflow:hidden;}
+.dics{ display:block; width:225px; padding-left:5px; margin-top:8px;  }
+.dics li{list-style:none; background:url(../images/disc.gif) no-repeat left; padding-left:7px; line-height:20px;}
+.userimg{ background:url(../images/userimg1.gif) no-repeat center; width:95px; height:91px; display:block;}
+.userhover{ background:url(../images/026.gif) no-repeat; margin-left:-3px; position:absolute;padding-left:7px;width:60px; line-height:23px;}
+
+/*标签*/
+
+.new{ position:absolute; margin-top:-6px; margin-left:61px;  z-index:2px; width:14px; height:14px; background:url(../images/new.jpg) no-repeat top;}
+
+/*我的财务资产负债对比*/
+.zichan{ background:url(../images/bl001.gif); height:14px; width:150px;}
+.zichan1{ background:url(../images/bl003.gif); height:14px; width:39px; float:right;}
+.nian{ background:url(../images/bl004.gif); height:14px; width:80px;}
+.fuzai{ background:url(../images/bl002.gif); height:14px; width:50px;}
+
+/*交易页面*/
+.table1{background:#ccc;font-family:Arial, Helvetica, sans-serif;color:#444;}
+.td2{ background:#fff;}
+/*提示信息*/
+.tishi02{ border:solid #00c600 1px; color:#009900; background-color:#e3ffea; line-height:25px; text-align:left; margin:0 5px; padding-left:5px;}
+/*按钮*/
+.btn_w{ background:url(../images/submit2.jpg) no-repeat; width:106px; line-height:31px; display:block; font-family:"微软雅黑"; font-size:16px;color:#555; text-align:center;text-decoration:none;cursor:pointer;}
+.btn_h{ background:url(../images/submit2.jpg) no-repeat; width:106px; line-height:31px; display:block; font-family:"微软雅黑"; font-size:16px;color:#ccc; text-align:center;text-decoration:none;}
+.btn_r2{ background:url(../images/purple/btn01.gif) no-repeat; width:106px;  line-height:31px; display:block; font-family:"微软雅黑"; font-size:16px;color:#fff; text-align:center; text-decoration:none; cursor:pointer; }
+.num{ background:url(../images/sj_szk.gif) no-repeat; text-align:center; width:19px; line-height:19px; font-family:Arial, Helvetica, sans-serif; font-weight:bolder; font-size:14px;}
+.btnw02{ background:url(../images/btn002.jpg) no-repeat right; height:25px;color:#666; text-decoration:none;}
+.btnw02 a:hover{ text-decoration:none;color:#666;}
+.btnback_w{ background:url(../images/but003.jpg) repeat-x; height:31px;line-height:31px;  font-family:"微软雅黑"; font-size:16px;color:#555; text-align:center;}
+.btn_bkd{ background:url(../images/bkd.gif) no-repeat; width:106px; line-height:31px; display:block; font-family:"微软雅黑"; font-size:16px;color:#ccc; text-align:center;text-decoration:none;cursor:pointer;}
+/*弹出框*/
+#mask {	position:absolute;top:0;left:0; width:expression(body.scrollWidth); height:expression(body.scrollHeight);background:#000;filter:ALPHA(opacity=50);z-index:1;visibility:visible;}
+#message_box{width:960px; height:expression(documentElement.clientHeight); margin:0 auto;z-index:10;visibility:hidden; position:absolute; margin:0;}
+/*协议页面背景*/	
+.maxback{ background:url(../images/max_body.gif) repeat-y; width:956px;}
+/*滚动条*/
+.srocll{overflow: scroll;
+overflow-x: hidden;
+overflow-y: auto !important;scrollbar-face-color:#ffffff;scrollbar-highlight-color:#ffffff;overflow:auto;scrollbar-shadow-color:#919192;scrollbar-3dlight-color:#ffffff;scrollbar-arrow-color:#919192;scrollbar-track-color:#ffffff;scrollbar-darkshadow-color:#ffffff;letter-spacing:1pt; }
+.rilisz{ background:url(../images/time_bg.png) no-repeat; width:370px; height:320px;}
+.rilisz2{ background:url(../images/time_bg1.png) no-repeat; width:370px; height:340px;}
+/*头像*/
+.temp span{ cursor:hand;}
+.temp2{ border:2px solid #CC99FF;display:block; width:97px; height:92px; cursor:hand;}
+.temp3{ border:0; cursor:hand;}
+.userimg01{ background:url(../images/avatar/temp0.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg02{ background:url(../images/avatar/temp1.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg03{ background:url(../images/avatar/temp2.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg04{ background:url(../images/avatar/temp3.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg05{ background:url(../images/avatar/temp4.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg06{ background:url(../images/avatar/temp5.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg07{ background:url(../images/avatar/temp6.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg08{ background:url(../images/avatar/temp7.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg09{ background:url(../images/avatar/temp8.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg10{ background:url(../images/avatar/temp9.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg11{ background:url(../images/avatar/temp10.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg12{ background:url(../images/avatar/temp11.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg13{ background:url(../images/avatar/temp12.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg14{ background:url(../images/avatar/temp13.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg15{ background:url(../images/avatar/temp14.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg16{ background:url(../images/avatar/temp15.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg17{ background:url(../images/avatar/temp16.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg18{ background:url(../images/avatar/temp17.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg19{ background:url(../images/avatar/temp18.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg20{ background:url(../images/avatar/temp19.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg21{ background:url(../images/avatar/temp20.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg22{ background:url(../images/avatar/temp21.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg23{ background:url(../images/avatar/temp22.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg24{ background:url(../images/avatar/temp23.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg25{ background:url(../images/avatar/temp24.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg26{ background:url(../images/avatar/temp25.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg27{ background:url(../images/avatar/temp26.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg28{ background:url(../images/avatar/temp27.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg29{ background:url(../images/avatar/temp28.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg30{ background:url(../images/avatar/temp29.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg31{ background:url(../images/avatar/temp30.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg32{ background:url(../images/avatar/temp31.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg33{ background:url(../images/avatar/temp32.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg34{ background:url(../images/avatar/temp33.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg35{ background:url(../images/avatar/temp34.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg36{ background:url(../images/avatar/temp35.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg37{ background:url(../images/avatar/temp36.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg38{ background:url(../images/avatar/temp37.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg39{ background:url(../images/avatar/temp38.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg40{ background:url(../images/avatar/temp39.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg41{ background:url(../images/avatar/temp40.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg42{ background:url(../images/avatar/temp41.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+.userimg43{ background:url(../images/avatar/temp42.jpg) no-repeat center; width:95px; height:91px; display:block; cursor:pointer;}
+/*结果页隐藏*/
+.ycback02{ background:url(../images/jg9.jpg) no-repeat center top; width:189px; height:31px; cursor:pointer; padding-top:5px;}
+.ycback01{ background:url(../images/jg10.jpg) no-repeat center top; width:189px; height:31px; cursor:pointer; padding-top:5px;}
+
+/*网银小帮助*/
+.pwdhelpback2{ background:url(../images/pwdhelpcenter2.jpg) repeat-y; width:620px;}
+.pwdhelpimg2{ background:url(../images/pwdhelpdown2.jpg) no-repeat bottom;  height:250px; }
+.pwdpad{ padding:10px 20px 30px 20px;}
+.pwdtxt{ line-height:22px; padding-left:5px;}

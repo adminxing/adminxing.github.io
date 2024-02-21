@@ -1,0 +1,107 @@
+
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+ 
+    /*去除移动端点击产生的高亮状态*/
+    -webkit-tap-highlight-color: transparent;
+}
+ 
+html{
+    font-size: 10px;
+    font-family: 'Microsoft Yahei', sans-serif;
+    color: #000;
+}
+ 
+a{
+    text-decoration: none;
+    color: #666666;
+}
+
+h2,h3,h4,h5{ font-weight: 300; } 
+
+ul,ol{
+    list-style: none;
+}
+ 
+input{
+    border: none;
+    outline: none;
+    /*针对iOS浏览器, 清除默认非扁平化分格*/
+    -webkit-appearance: none;
+}
+ 
+.clearfix::before,
+.clearfix::after{
+    content: '';
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+
+div,p,a,ul,li,span,img{ /*transition: all .5s; -webkit-transition: all .5s;*/ }
+
+
+.check_input {
+        position: absolute;
+        left: 0;
+        top:0;
+        /*去掉input原有样式*/
+            width: 0.34rem;
+            height: 0.34rem;
+            visibility: hidden;
+        }
+.check_input+label {
+    position: absolute;
+    left: 0;
+    top:0;
+    /*给label添加默认样式*/
+    background: url(../imgs/ok_icon_kong.png) no-repeat;
+    background-size: 0.34rem 0.34rem;
+    width: 0.34rem;
+    height: 0.34rem;
+    display: inline-block;
+}
+/*被选中时候改变背景*/
+.check_input:checked+label {
+    background: url(../imgs/okactive_icon.png) no-repeat;
+    background-size: 0.34rem 0.34rem;
+}
+
+.check_inputH {
+        position: absolute;
+        left: 0;
+        top:0;
+        /*去掉input原有样式*/
+            width: 0.34rem;
+            height: 0.34rem;
+            visibility: hidden;
+        }
+.check_inputH+label {
+    position: absolute;
+    left: 0;
+    top:0;
+    /*给label添加默认样式*/
+    background: url(../imgs/ok_icon_kong.png) no-repeat;
+    background-size: 0.34rem 0.34rem;
+    width: 0.34rem;
+    height: 0.34rem;
+    display: inline-block;
+}
+/*被选中时候改变背景*/
+.check_inputH:checked+label {
+    background: url(../imgs/ok_icon.png) no-repeat;
+    background-size: 0.34rem 0.34rem;
+}
